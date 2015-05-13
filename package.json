@@ -1,31 +1,49 @@
 {
-  "name"        : "customermanagement-api",
-  "version"     : "1.0.0",
-  "description" : "customermanagement-api",
-  "main"        : "server.js",
-  "scripts"     : {
-    "test" : "echo \"Error: no test specified\" && exit 1"
+  "name": "customermanagement-api",
+  "version": "1.0.0",
+  "description": "customermanagement-api",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "gulp test"
   },
-  "repository" : {
-    "type" : "git",
-    "url"  : "https://github.com/xxryan1234/customermanagement-api.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xxryan1234/customermanagement-api.git"
   },
-  "keywords" : [
+  "keywords": [
     "customer",
     "management"
   ],
-  "author"  : "",
-  "license" : "ISC",
-  "bugs"    : {
-    "url" : "https://github.com/xxryan1234/customermanagement-api/issues"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xxryan1234/customermanagement-api/issues"
   },
   "dependencies": {
-    "hapi"          : "^8.4.0",
-    "hapi-auth-jwt" : "^2.1.1",
-    "hapi-swagger"  : "^0.7.3",
-    "joi"           : "^6.2.0",
-    "lodash"        : "^3.8.0",
-    "mongoose"      : "^4.0.1"
+    "eslint": "^0.21.0",
+    "fs": "0.0.2",
+    "hapi": "^8.4.0",
+    "hapi-auth-jwt": "^2.1.1",
+    "hapi-swagger": "^0.7.3",
+    "joi": "^6.4.1",
+    "jscs": "^1.13.1",
+    "lodash": "^3.8.0",
+    "mongoose": "^4.0.1",
+    "path": "^0.11.14"
   },
-  "homepage": "https://github.com/xxryan1234/customermanagement-api"
+  "homepage": "https://github.com/xxryan1234/customermanagement-api",
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "gulp": "^3.8.11",
+    "gulp-coverage": "^0.3.35",
+    "gulp-eslint": "^0.12.0",
+    "gulp-exit": "0.0.2",
+    "gulp-jshint": "^1.10.0",
+    "gulp-mocha": "^2.0.1",
+    "gulp-param": "^0.6.3",
+    "jshint-stylish": "^1.0.2",
+    "mocha": "^2.2.4",
+    "sinon": "^1.14.1"
+  }
 }
