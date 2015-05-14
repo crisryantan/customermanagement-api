@@ -18,7 +18,6 @@ exports.displayCustomers = function( request, reply ) {
 };
 
 exports.addCustomer = function( request, reply ) {
-	new CustomerSchema( {}, { 'versionKey' : false } );
 	var newCustomer = new CustomerSchema( {
 		'joined' : request.payload.joined,
 		'fname'  : request.payload.fname,
