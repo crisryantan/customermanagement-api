@@ -17,7 +17,6 @@ describe( 'DB Schema - Customer.js', function () {
 		} );
 
 		describe( 'joined', function () {
-			var date = '11/29/1990';
 			it( 'expect field to be date format', function () {
 				expect( field.joined.type ).to.equal( Date );
 			} );
