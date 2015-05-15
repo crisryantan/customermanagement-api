@@ -98,6 +98,13 @@ exports.addCustomerOrder = function ( request, reply ) {
 	var total = request.payload.productQuantity * request.payload.productCost;
 
 	CustomerSchema.findOne( { '_id' : request.params.id }, function ( err, customer ) {
+		if ( err ) {
+			return reply( {
+				'statusCode' : '500',
+				'error'      : err,
+				'message'    : 'Failed to add order'
+			} );
+		}
 		var order = new OrderSchema( {
 			'product'  : request.payload.productName,
 			'cost'     : request.payload.productCost,
@@ -122,7 +129,7 @@ exports.addCustomerOrder = function ( request, reply ) {
 							'message'    : 'Failed to add order'
 						} );
 					}
-					reply( order )
+					reply( order );
 				} );
 		} );
 	} );

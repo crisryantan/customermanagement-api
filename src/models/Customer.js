@@ -9,7 +9,7 @@ var customerSchema = mongoose.Schema( {
 	'lname'      : { 'type' : String, 'required' : true, 'default' : '' },
 	'city'       : { 'type' : String, 'required' : true, 'default' : '' },
 	'orderTotal' : { 'type' : Number },
-	'orders'     : [ { 'type' : mongoose.Schema.Types.ObjectId, ref: 'orders' } ]
+	'orders'     : [ { 'type' : mongoose.Schema.Types.ObjectId, 'ref' : 'orders' } ]
 } );
 
 mongoose.model( 'customers', customerSchema );

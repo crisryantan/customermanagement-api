@@ -61,9 +61,11 @@ describe( 'DB Schema - Customer.js', function () {
 
 		describe( 'orders', function () {
 			it( 'expect field to be an object', function () {
-				expect( field.orders.type ).to.equal( Object );
+				expect( typeof field.orders ).to.equal( 'object' );
+			} );
+			it( 'expect field to refer to orders', function () {
+				expect( field.orders[ 0 ].ref ).to.equal( 'orders' );
 			} );
 		} );
-
 	} );
 } );
