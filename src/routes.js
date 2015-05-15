@@ -32,7 +32,7 @@ module.exports = [
 		'handler' : customerAPI.editCustomer
 	},
 	{
-		'method'  : 'PUT',
+		'method'  : 'POST',
 		'path'    : '/addorder/{id}',
 		'handler' : customerAPI.addCustomerOrder
 	}

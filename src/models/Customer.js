@@ -4,19 +4,12 @@
 var mongoose = require( 'mongoose' );
 
 var customerSchema = mongoose.Schema( {
-	'joined'     : { 'type' : String, 'required' : true },
-	'fname'      : { 'type' : String, 'required' : true },
-	'lname'      : { 'type' : String, 'required' : true },
-	'city'       : { 'type' : String, 'required' : true },
-	'orderTotal' : Number,
-	'orders'     : [
-		{
-			'product'  : String,
-			'cost'     : Number,
-			'quantity' : Number,
-			'total'    : Number
-		}
-	]
+	'joined'     : { 'type' : Date, 'required' : true, 'default' : '01/01/1900' },
+	'fname'      : { 'type' : String, 'required' : true, 'default' : '' },
+	'lname'      : { 'type' : String, 'required' : true, 'default' : '' },
+	'city'       : { 'type' : String, 'required' : true, 'default' : '' },
+	'orderTotal' : { 'type' : Number },
+	'orders'     : [ { 'type' : mongoose.Schema.Types.ObjectId, ref: 'orders' } ]
 } );
 
 mongoose.model( 'customers', customerSchema );

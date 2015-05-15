@@ -2,24 +2,24 @@
 // Instrumentation Header
 {
     var fs = require('fs');
-    var __statement_L1heTJ, __expression_kgWHQ2, __block_YrAgNM;
+    var __statement_JdonHE, __expression_Q50ZMe, __block_FhGq4m;
     var store = require('/Users/gzRyan/Documents/angularJohnPapa/customermanagement-api/node_modules/gulp-coverage/contrib/coverage_store.js');
     
-    __statement_L1heTJ = function(i) {
+    __statement_JdonHE = function(i) {
         var fd = store.register('/Users/gzRyan/Documents/angularJohnPapa/customermanagement-api/src/models/Customer.js');
         fs.writeSync(fd, '{"statement": {"node": ' + i + '}},\n');
     }; 
     
-    __expression_kgWHQ2 = function(i) {
+    __expression_Q50ZMe = function(i) {
         var fd = store.register('/Users/gzRyan/Documents/angularJohnPapa/customermanagement-api/src/models/Customer.js');
         fs.writeSync(fd, '{"expression": {"node": ' + i + '}},\n');
     }; 
     
-    __block_YrAgNM = function(i) {
+    __block_FhGq4m = function(i) {
         var fd = store.register('/Users/gzRyan/Documents/angularJohnPapa/customermanagement-api/src/models/Customer.js');
         fs.writeSync(fd, '{"block": ' + i + '},\n');
     }; 
-    __intro_kx_EyZ = function(id, obj) {
+    __intro_NAJFdW = function(id, obj) {
         // console.log('__intro: ', id, ', obj.__instrumented_miss: ', obj.__instrumented_miss, ', obj.length: ', obj.length);
         (typeof obj === 'object' || typeof obj === 'function') &&
             Object.defineProperty && Object.defineProperty(obj, '__instrumented_miss', {enumerable: false, writable: true});
@@ -39,7 +39,7 @@
             obj.__instrumented_miss[id] !== undefined &&
             'number' === typeof obj.length;
     }
-    __extro_Soik0F = function(id, obj) {
+    __extro_W6MNV9 = function(id, obj) {
         var fd = store.register('/Users/gzRyan/Documents/angularJohnPapa/customermanagement-api/src/models/Customer.js');
         // console.log('__extro: ', id, ', obj.__instrumented_miss: ', obj.__instrumented_miss, ', obj.length: ', obj.length);
         if ('undefined' !== typeof obj && null !== obj && 'undefined' !== typeof obj.__instrumented_miss) {
@@ -61,37 +61,43 @@
 
 // Instrumented Code
 {
-    __statement_L1heTJ(0);
-    __expression_kgWHQ2(1), function () {
-        __block_YrAgNM(0);
+    __statement_JdonHE(0);
+    __expression_Q50ZMe(1), function () {
+        __block_FhGq4m(0);
         {
-            __statement_L1heTJ(2);
+            __statement_JdonHE(2);
             'use strict';
         }
         {
-            __statement_L1heTJ(3);
-            var mongoose = (__expression_kgWHQ2(4), require('mongoose'));
+            __statement_JdonHE(3);
+            var mongoose = (__expression_Q50ZMe(4), require('mongoose'));
         }
         {
-            __statement_L1heTJ(5);
-            var customerSchema = __extro_Soik0F(6, __intro_kx_EyZ(6, mongoose).Schema({
+            __statement_JdonHE(5);
+            var customerSchema = __extro_W6MNV9(6, __intro_NAJFdW(6, mongoose).Schema({
                     'joined': {
-                        'type': String,
-                        'required': true
+                        'type': Date,
+                        'required': true,
+                        'default': '01/01/1900'
                     },
                     'fname': {
                         'type': String,
-                        'required': true
+                        'required': true,
+                        'default': ''
                     },
                     'lname': {
                         'type': String,
-                        'required': true
+                        'required': true,
+                        'default': ''
                     },
                     'city': {
                         'type': String,
-                        'required': true
+                        'required': true,
+                        'default': ''
                     },
-                    'orderTotal': Number,
+                    'orderTotal': {
+                        'type': Number
+                    },
                     'orders': [
                         {
                             'product': String,
@@ -103,12 +109,12 @@
                 }));
         }
         {
-            __statement_L1heTJ(7);
-            __extro_Soik0F(8, __intro_kx_EyZ(8, mongoose).model('customers', customerSchema));
+            __statement_JdonHE(7);
+            __extro_W6MNV9(8, __intro_NAJFdW(8, mongoose).model('customers', customerSchema));
         }
         {
-            __statement_L1heTJ(9);
-            module.exports = __extro_Soik0F(10, __intro_kx_EyZ(10, mongoose).model('customers'));
+            __statement_JdonHE(9);
+            module.exports = __extro_W6MNV9(10, __intro_NAJFdW(10, mongoose).model('customers'));
         }
     }();
 }
