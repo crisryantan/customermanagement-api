@@ -10,7 +10,7 @@ install:
 
 script:
   # Run unit tests (and check for coverage)
-    - mocha
+    - gulp test
 
 services:
     - mongodb
