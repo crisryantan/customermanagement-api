@@ -1,11 +1,11 @@
 'use strict';
 
-var expect    = require( 'chai' ).expect;
-var appDir    = process.cwd();
-var customer = require( appDir + '/src/models/Customer' );
+var expect         = require( 'chai' ).expect;
+var Mongoose       = require( 'mongoose' );
+var CustomerSchema = Mongoose.model( 'Customer' );
 
 describe( 'DB Schema - Customer.js', function () {
-	var field = customer.schema.tree;
+	var field = CustomerSchema.schema.tree;
 	describe( 'Customer schema', function () {
 		it( 'expect to have all the fields', function () {
 			expect( field ).to.have.property( 'joined' );

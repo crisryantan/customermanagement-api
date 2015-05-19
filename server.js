@@ -9,6 +9,9 @@ var configDB = require( './config/database.js' );
 // connect to mongo
 mongoose.connect( configDB.url );
 
+require( './src/models/Customer' );
+require( './src/models/Order' );
+
 // connect to port
 server.connection( { 'port' : 3000 } );
 

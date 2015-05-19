@@ -1,18 +1,18 @@
 'use strict';
 
-var expect    = require( 'chai' ).expect;
-var appDir    = process.cwd();
-var customer = require( appDir + '/src/models/Order' );
+var expect      = require( 'chai' ).expect;
+var Mongoose    = require( 'mongoose' );
+var OrderSchema = Mongoose.model( 'Order' );
 
 describe( 'DB Schema - Order.js', function () {
-	var field = customer.schema.tree;
+	var field = OrderSchema.schema.tree;
 	describe( 'Order schema', function () {
 		it( 'expect to have all the fields', function () {
 			expect( field ).to.have.property( 'product' );
 			expect( field ).to.have.property( 'cost' );
 			expect( field ).to.have.property( 'quantity' );
 			expect( field ).to.have.property( 'total' );
-			expect( field ).to.have.property( 'customer' );
+			expect( field ).to.have.property( 'customerId' );
 		} );
 
 		describe( 'product', function () {
@@ -51,12 +51,12 @@ describe( 'DB Schema - Order.js', function () {
 			} );
 		} );
 
-		describe( 'customer', function () {
+		describe( 'customerId', function () {
 			it( 'expect field to be an object', function () {
-				expect( typeof field.customer ).to.equal( 'object' );
+				expect( typeof field.customerId ).to.equal( 'object' );
 			} );
 			it( 'expect field to refer to customers', function () {
-				expect( field.customer.ref ).to.equal( 'customers' );
+				expect( field.customerId.ref ).to.equal( 'customers' );
 			} );
 		} );
 	} );
